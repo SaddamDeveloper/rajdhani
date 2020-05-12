@@ -58,9 +58,6 @@ class NewsController extends Controller
          $news->photo = $request->photo;
 
 
-
-
-
          if($request->photo != null)
          {
 
