@@ -11786,3 +11786,18 @@ ul.course-feature2 li:before {
 .form-control {
     width: 98%;
 }
+.student {
+    background-color: #f1f1f1;
+    padding: 20px 25px;
+    margin: 75px 0;
+}
+.student button {
+    display: block;
+    margin: auto;
+}
+header {
+    box-shadow: 0 2px 7px #00000026;
+}
+#desktop-nav ul {
+    float: right;
+}
