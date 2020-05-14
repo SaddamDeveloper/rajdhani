@@ -374,42 +374,96 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <h4>Name of the optional subjects for Class IX / X <small>(Any Six)</small> :</h4>
+                            <h4>Name of the optional subjects for Class XI / XII <small>(Any Six)</small> :</h4>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-2 col-sm-6">
                             <div class="form-group">
                                 <input type="checkbox" id="ec">
-                                <label for="ec">English Communicative</label>
+                                <label for="ec">English Core</label>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-2 col-sm-6">
                             <div class="form-group">
-                                <input type="checkbox" id="Mathematics">
-                                <label for="Mathematics">Mathematics</label>
+                                <input type="checkbox" id="physics">
+                                <label for="physics">Physics</label>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-2 col-sm-6">
                             <div class="form-group">
-                                <input type="checkbox" id="Social">
-                                <label for="Social">Social Science</label>
+                                <input type="checkbox" id="chem">
+                                <label for="chem">Chemistry</label>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-2 col-sm-6">
                             <div class="form-group">
-                                <input type="checkbox" id="tech">
-                                <label for="tech">Science & Technology</label>
+                                <input type="checkbox" id="math">
+                                <label for="math">Mathematics</label>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-2 col-sm-6">
                             <div class="form-group">
-                                <input type="checkbox" id="hindi">
-                                <label for="hindi">Hindi / Assamese</label>
+                                <input type="checkbox" id="biology">
+                                <label for="biology">Biology</label>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-2 col-sm-6">
                             <div class="form-group">
-                                <input type="checkbox" id="Computer">
-                                <label for="Computer">Computer / P.Ed.</label>
+                                <input type="checkbox" id="account">
+                                <label for="account">Accountancy</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="form-group">
+                                <input type="checkbox" id="businesss">
+                                <label for="businesss">Business Studies</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="form-group">
+                                <input type="checkbox" id="socio">
+                                <label for="socio">Sociology</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="form-group">
+                                <input type="checkbox" id="polsc">
+                                <label for="polsc">Pol. Science</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="form-group">
+                                <input type="checkbox" id="eco">
+                                <label for="eco">Economics</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="form-group">
+                                <input type="checkbox" id="geo">
+                                <label for="geo">Geography</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="form-group">
+                                <input type="checkbox" id="psycho">
+                                <label for="psycho">Psychology</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="form-group">
+                                <input type="checkbox" id="pee">
+                                <label for="pee">Physical Education</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="form-group">
+                                <input type="checkbox" id="history">
+                                <label for="history">History</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="form-group">
+                                <input type="checkbox" id="Computerc">
+                                <label for="Computerc">Computer Science</label>
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -435,25 +489,31 @@
                                 <input type="text" id="co-act" class="form-control" placeholder="Enter co-curricular activities">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <h4>List of documents enclosed <small>(Attested X-Rox Copies)</small>:</h4>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <input type="checkbox" id="mcc">
                                 <label for="mcc">Marks Card</label>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <input type="checkbox" id="tcc">
                                 <label for="tcc">Transfer Certificate</label>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <input type="checkbox" id="bcc">
-                                <label for="bcc">Birth Certificate</label>
+                                <label for="bcc">Migration Certificate in Original <small>(for other Board)</small></label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="checkbox" id="bccc">
+                                <label for="bccc">Registration Card of Class IX</label>
                             </div>
                         </div>
                     </div>

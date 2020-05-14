@@ -11808,3 +11808,19 @@ header {
     padding: 20px 35px;
     border: 1px dashed #d4d4d4;
 }
+.declarations h4 {
+    background-color: #99b1ff;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 2px 15px;
+    border: 1px dashed #fff;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+.d-block {
+    display: block;
+}
+.declarations p {
+    font-size: 20px;
+}
