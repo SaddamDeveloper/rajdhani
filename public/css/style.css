@@ -7816,7 +7816,7 @@ ul.course-feature2 li:before {
 }
 
 .news-page-area {
-    padding: 100px 0
+    padding: 60px 0;
 }
 
 @media(min-width:992px) and (max-width:1199px) {
@@ -11838,4 +11838,12 @@ header {
     margin: auto;
     margin-bottom: 50px;
     margin-top: -15px;
+}
+.hue img {
+    filter: hue-rotate(0deg);
+    transition: all 0.4s ease;
+}
+.hue img:hover {
+    filter: hue-rotate(90deg);
+    cursor: pointer;
 }

@@ -124,6 +124,7 @@
 
 
                                        </li>
+                                       <li><a href="{{url('/blogs')}}">Blog</a>
                                        <li><a href="{{url('/gallery')}}">Gallery</a>
 
                                        </li>
