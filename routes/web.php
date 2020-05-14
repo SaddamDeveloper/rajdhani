@@ -15,6 +15,13 @@ require __DIR__ . '/newRoutes.php';
 //     return view('welcome');
 // });
 
+Route::get('/student/login', 'Student\StudentLoginController@showStudentLoginForm')->name('student.login');
+Route::post('/student/login', 'Student\StudentLoginController@studentLogin');
+Route::get('/student/logout', 'Student\StudentLoginController@logout')->name('student.logout');
+
+Route::group(['middleware'=>'auth:student','prefix'=>'student','namespace'=>'Student'],function(){
+    Route::get('/dashboard', 'StudentDashboardController@index')->name('admin.dashboard');
+});
 Route::get('/','PagesController@index');
 // Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
@@ -67,6 +74,4 @@ Route::get('payment', 'PaymentController@payment');
 Route::get('/change_password', 'Auth\ChangePasswordController@index');
 Route::post('/change_password', 'Auth\ChangePasswordController@changepassword');
 Route::get('/logout', 'Auth\LoginController@logout');
-
-
 });
