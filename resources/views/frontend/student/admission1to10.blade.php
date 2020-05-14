@@ -507,8 +507,38 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
                    </div>
+                   <div class="student admission">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Upload necessary Documents:</h4>
+                            </div>
+                            <div id="file_options">
+                                <div class="file-group">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="file">File Input</label>
+                                            <input type="file" id="file" class="form-control">
+                                            <input type="hidden" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="documentname">Document Name</label>
+                                            <input type="text" id="documentname" class="form-control" placeholder="Enter document name">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="btn-wrapper">
+                                    <button id="file_more" class="btn btn-success">Upload more</button>
+                                    <button id="remove_file" class="btn btn-danger">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="student-submit-btn">Submit</button>
                </div>
             </form>
         </div>
@@ -547,5 +577,19 @@
 <script src="js/jquery.gridrotator.js" type="text/javascript"></script>
 <!-- Custom Js -->
 <script src="js/main.js" type="text/javascript"></script>
-
+<script>
+    var data = '<div class="file-group"><div class="col-md-6"><div class="form-group"> <label for="">File Input</label> <input type="file" id="" class="form-control" placeholder="Signature of parent\'s/guardian"></div></div><div class="col-md-6"><div class="form-group"> <label for="">Document Name</label> <input type="text" id="" class="form-control" placeholder="Enter document name"></div></div></div>';
+    $('#file_more, #remove_file').click(function(e) {
+        e.preventDefault();
+    });
+    $('#file_more').click(function() {
+        $('#file_options').append(data);
+    });
+    $('#remove_file').click(function() {
+        var length = $('#file_options').children().length;
+        if (length > 1) {
+            $('#file_options .file-group:last-child').remove();
+        }
+    });
+</script>
 </html>

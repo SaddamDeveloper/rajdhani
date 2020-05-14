@@ -11824,3 +11824,18 @@ header {
 .declarations p {
     font-size: 20px;
 }
+.btn-wrapper {
+    margin-top: 15px;
+}
+.btn-wrapper button {
+    display: inline-block;
+}
+.btn-wrapper button:first-child {
+    margin-right: 8px;
+}
+#student-submit-btn {
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: -15px;
+}
