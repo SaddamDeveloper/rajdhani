@@ -11847,3 +11847,10 @@ header {
     filter: hue-rotate(90deg);
     cursor: pointer;
 }
+.student .invalid-feedback strong {
+    font-weight: 100 !important;
+    position: absolute;
+}
+.student .form-group {
+    margin-bottom: 20px;
+}
