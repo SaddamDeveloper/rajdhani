@@ -48,6 +48,9 @@
                                    <ul>
                                     @if(Auth::guard('student')->check())
                                         <li>
+                                            <a href="{{route('student.dashboard')}}" class="pull-right">Dashboard</a>
+                                        </li>
+                                        <li>
                                             <a href="" class="pull-right">{{Auth::guard('student')->user()->name}}</a>
                                         </li>
                                         <li>

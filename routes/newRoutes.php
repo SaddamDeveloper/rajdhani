@@ -18,9 +18,9 @@ Route::get('/student-register', function () {
     return view('frontend.student.register');
 })->name('frontend.student_register');
 
-Route::get('/student-admission-1-10', function () {
-    return view('frontend.student.admission1to10');
-})->name('frontend.student_admission_1_to_10');
+// Route::get('/student-admission-1-10', function () {
+//     return view('frontend.student.admission1to10');
+// })->name('frontend.student_admission_1_to_10');
 
 Route::get('/student-admission-11-12', function () {
     return view('frontend.student.admission11to12');

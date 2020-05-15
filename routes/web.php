@@ -17,10 +17,12 @@ require __DIR__ . '/newRoutes.php';
 
 Route::get('/student/login', 'Student\StudentLoginController@showStudentLoginForm')->name('student.login');
 Route::post('/student/login', 'Student\StudentLoginController@studentLogin');
-Route::get('/student/logout', 'Student\StudentLoginController@logout')->name('student.logout');
+Route::post('/student/logout', 'Student\StudentLoginController@logout')->name('student.logout');
 
 Route::group(['middleware'=>'auth:student','prefix'=>'student','namespace'=>'Student'],function(){
-    Route::get('/dashboard', 'StudentDashboardController@index')->name('admin.dashboard');
+    Route::get('/dashboard', 'StudentDashboardController@index')->name('student.dashboard');
+    Route::get('/student-admission-1-10', 'StudentDashboardController@showAdmissionForm10')->name('frontend.student_admission_1_to_10');
+    Route::post('/student/form/submit', 'StudentDashboardController@store')->name('student.form.store');
 });
 Route::get('/','PagesController@index');
 // Route::get('/about','PagesController@about');
