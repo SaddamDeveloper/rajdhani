@@ -60,6 +60,22 @@ class Handler extends ExceptionHandler
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
 
+        $guard = Array($exception->guards(), 0);
+        switch ($guard) {
+            case 'student':
+                $login = 'student.login';
+                break;
+            case 'api':
+                $response = [
+                    'status'=>false,
+                    'login_error' => 1,
+                    'message'=>'unauthorize'
+                ];
+                return response()->json($response, 200);              
+            default:
+                $login = 'student.login';
+                break;
+        }
         return redirect()->guest('login');
     }
 }

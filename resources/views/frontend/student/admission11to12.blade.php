@@ -81,7 +81,6 @@
                 <div class="col-md-12">
                     <div class="mobile-menu">
                             <nav id="dropdown">
-
                             <ul>
                                 <li><a href="#">Log Out</a>
                                 </li>
