@@ -25,6 +25,8 @@ class StudentLoginController extends Controller
         if (Auth::guard('student')->attempt(['mobile' => $request->mobile, 'password' => $request->password])) {
             
             return redirect()->intended('/student/dashboard');
+        }else{
+            return back()->with('error', "Phone No or Password is incorrect!");
         }
     }
     public function logout()
