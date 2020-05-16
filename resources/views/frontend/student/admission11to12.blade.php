@@ -176,7 +176,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="cast-comm-group-tribe">Community</label>
+                                <label for="cast-comm-group-tribe">Cast/Comm/Group/Tribe <small>(Upload a copy of certificate)</small></label>
                                 <select name="" class="form-control" id="cast-comm-group-tribe">
                                     <option value="" selected disabled>--SELECT CASTE/COMM/GROUP/TRIBE--</option>
                                     <option value="OBC">OBC</option>

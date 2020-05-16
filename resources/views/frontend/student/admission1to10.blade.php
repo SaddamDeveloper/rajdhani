@@ -132,7 +132,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="cast-comm-group-tribe">Cast</label>
+                                <label for="cast-comm-group-tribe">Cast/Comm/Group/Tribe <small>(Upload a copy of certificate)</label>
                                 <select name="cast" class="form-control" id="cast-comm-group-tribe">
                                     <option value="" selected disabled>--SELECT CASTE/COMM/GROUP/TRIBE--</option>
                                     <option value="General">General</option>
@@ -479,10 +479,10 @@
                                 <label for="lhindi">Hindi</label>
                             </div>
                         </div>
-                        <div class="col-md-9">
-                            <h4>Co-Curricular activities <small>(Games/Athletics/Debating/Essay Writing/Drawing/Quiz/Music/Computer/Dance)</small>:</h4>
+                        <div class="col-md-12">
+                            <h4>Co-Curricular activities <small>(Games/Athletics/Debating/Essay Writing/Drawing/Quiz/Music/Computer/Dance) (Upload a copy of certificate)</small>:</h4>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <input type="text" id="co-act" class="form-control" name="co-act" value="{{old('co-act')}}" placeholder="Enter co-curricular activities">
                                 @if($errors->has('co-act'))
@@ -595,10 +595,10 @@
                             </div>
                         </div>
                    </div>
-                    {{-- <div class="student admission">
+                    <div class="student admission">
                         <div class="row">
                             <div class="col-md-12">
-                                <h4>Upload necessary Documents:</h4>
+                                <h4>Upload necessary Documents <small>(Compulsory: candidate photo and signature)</small> :</h4>
                             </div>
                             <div id="file_options">
                                 <div class="file-group">
@@ -624,7 +624,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                     <button type="submit" class="btn btn-primary pull-right" style="margin-bottom:10px" id="student-submit-btn">Submit</button>
                </div>
             </form>
