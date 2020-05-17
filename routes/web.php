@@ -19,10 +19,15 @@ Route::get('/student/login', 'Student\StudentLoginController@showStudentLoginFor
 Route::post('/student/login', 'Student\StudentLoginController@studentLogin');
 Route::post('/student/logout', 'Student\StudentLoginController@logout')->name('student.logout');
 
+
+Route::get('/student-register','Student\StudentLoginController@showStudentRegistrationForm')->name('frontend.student_register');
+Route::post('/student/register/submit', 'Student\StudentLoginController@store')->name('student.registration.store');
+
 Route::group(['middleware'=>'auth:student','prefix'=>'student','namespace'=>'Student'],function(){
     Route::get('/dashboard', 'StudentDashboardController@index')->name('student.dashboard');
-    Route::get('/student-admission-1-10', 'StudentDashboardController@showAdmissionForm10')->name('frontend.student_admission_1_to_10');
+    Route::get('/student-admission', 'StudentDashboardController@showAdmissionForm')->name('frontend.student_admission');
     Route::post('/student/form/submit', 'StudentDashboardController@store')->name('student.form.store');
+    Route::get('/payment', 'StudentDashboardController@showPaymentForm')->name('frontend.payment');
 });
 Route::get('/','PagesController@index');
 // Route::get('/about','PagesController@about');

@@ -4,17 +4,27 @@ namespace App\Http\Controllers\Student;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Registration;
+use Auth;
+use App\Student;
+use App\OptionalSubjects;
+use App\Language;
+use App\UploadedDocument;
+use Intervention\Image\Facades\Image;
+use Carbon\Carbon;
+use DB;
 class StudentDashboardController extends Controller
 {
     public function index()
     {
-        return view('frontend.student.studentdashboard');
+        $registration = Registration::where('user_id', Auth::guard('student')->user()->id)->first();
+        return view('frontend.student.studentdashboard', compact('registration'));
     }
 
-    public function showAdmissionForm10()
+    public function showAdmissionForm()
     {
-        return view('frontend.student.admission1to10');
+        $student = Student::where('id', Auth::guard('student')->user()->id)->first();
+        return view('frontend.student.admission', compact('student'));
     }
 
     public function store(Request $request){
@@ -53,7 +63,103 @@ class StudentDashboardController extends Controller
             'dated2'            => 'required',
             'ds2'               => 'required',
         ]);
+            $registration = new Registration;
+            $registration->user_id              = Auth::guard('student')->user()->id;
+            $registration->session              = $request->input('session');
+            $registration->admission_no         = $request->input('admission_no');
+            $registration->registration_no      = $request->input('registration_no');
+            $registration->name                 = $request->input('name');
+            $registration->dob                  = $request->input('dob');
+            $registration->place                = $request->input('place');
+            $registration->fn                   = $request->input('fn');
+            $registration->mn                   = $request->input('mn');
+            $registration->mt                   = $request->input('mt');
+            $registration->religion             = $request->input('religion');
+            $registration->community            = $request->input('community');
+            $registration->cast                 = $request->input('cast');
+            $registration->pa                   = $request->input('pa');
+            $registration->la                   = $request->input('la');
+            $registration->la                   = $request->input('la');
+            $registration->tel                  = $request->input('tel');
+            $registration->local_tel            = $request->input('local-tel');
+            $registration->mobile               = $request->input('mobile');
+            $registration->email                = $request->input('email');
+            $registration->pgname               = $request->input('pgname');
+            $registration->pgaddress            = $request->input('pgaddress');
+            $registration->occupation           = $request->input('occupation');
+            $registration->income               = $request->input('income');
+            $registration->phone3               = $request->input('phone3');
+            $registration->mobileno             = $request->input('mobileno');
+            $registration->last_school_name     = $request->input('last-school-name');
+            $registration->last_school_place    = $request->input('last-school-place');
+            $registration->last_school_state    = $request->input('last-school-state');
+            $registration->last_school_country  = $request->input('last-school-country');
+            $registration->exam                 = $request->input('exam');
+            $registration->month_year           = $request->input('month-year');
+            $registration->rollno               = $request->input('rollno');
+            $registration->medium               = $request->input('medium');
+            $registration->co_act               = $request->input('co-act');
+            $registration->place1               = $request->input('placed1');
+            $registration->date1                = $request->input('dated1');
+            $registration->signature1           = $request->input('ds1');
+            $registration->place2               = $request->input('placed2');
+            $registration->date2                = $request->input('dated2');
+            $registration->signature2           = $request->input('ds2');
+            $opt_subjects = $request->input('opt_subject');
+            if(!empty($opt_subjects)){
+                foreach ($opt_subjects as $opt_subject) {
+                    $ins_opt_sub = new OptionalSubjects;
+                    $ins_opt_sub->user_id = Auth::guard('student')->user()->id;
+                    $ins_opt_sub->subject_name = $opt_subject;
+                    $ins_opt_sub->save();
+                }
+            }
+            $languages = $request->input('language');
+            if(!empty($languages)){
+                foreach ($languages as $ln) {
+                    $ins_language = new Language;
+                    $ins_language->user_id = Auth::guard('student')->user()->id;
+                    $ins_language->language = $ln;
+                    $ins_language->save();
+                }
+            }
+            $files = $request->uploaded_file;
+            $doc_name = $request->document_name;
+            if($request->hasFile('uploaded_file')){
+                $images=array();
+                $documents = array();
+                if($request->file('uploaded_file')){
+                    foreach($files as $file){
+                        $destination = base_path().'/public/Allphotos/photos/';
+                        $image_extension = $file->getClientOriginalExtension();
+                        $image_name = md5(date('now').time()).(1).".".$image_extension;
+                        $original_path = $destination;
+                        $file->move($original_path,$image_name);
+                        $images[]=$image_name;
+                    }
+                    for ($i = 0; $i < count($files); $i++) {
+                        $documents[] = [
+                            'user_id' => Auth::guard('student')->user()->id,
+                            'document' => $images[$i],
+                            'document_name' => $doc_name[$i],
+                            'created_at'    => Carbon::now()->setTimezone('Asia/Kolkata')->toDateTimeString()
+                        ];
+                    }
+                    $ins_uploaded_docs = DB::table('reg_uploaded_document')
+                    ->insert($documents);
+                }
 
-        
+            }
+            $insReg = $registration->save();
+            
+            if($insReg){
+                return view('frontend.student.payment');
+            }
+    }
+
+    public function showPaymentForm()
+    {
+        $registration = Registration::where('user_id', Auth::guard('student')->user()->id)->first();
+        return view('frontend.contents.payment', compact('registration'));
     }
 }

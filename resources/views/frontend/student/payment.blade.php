@@ -13,10 +13,10 @@
                 <button type="submit" class="btn btn-primary">Check</button>
             </div> --}}
             <div class="pay-now-box text-center" style="padding: 180px 0;">
-                @if(isset($registration->user_id) && !empty($registration->user_id))
-                    <a href="{{route('frontend.payment')}}" class="btn btn-success">PAY</a>
+                @if(Auth::guard('student')->user()->class == 'XI' || Auth::guard('student')->user()->class == 'XII')
+                    <a href="{{route('frontend.student_admission_11_to_12')}}" class="btn btn-success">PAY</a>
                 @else
-                    <a href="{{route('frontend.student_admission')}}" class="btn btn-success">FILL UP THE FORM</a>
+                    <a href="{{route('frontend.student_admission_1_to_10')}}" class="btn btn-success">PAY</a>
                 @endif
                 </div>
         </div>
