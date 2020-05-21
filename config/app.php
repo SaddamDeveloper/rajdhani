@@ -177,6 +177,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -229,6 +230,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Indipay' => Softon\Indipay\Facades\Indipay::class,
+        'Str' => Illuminate\Support\Str::class,
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

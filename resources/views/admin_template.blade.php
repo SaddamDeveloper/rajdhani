@@ -255,22 +255,15 @@ desired effect
         <li class="header">HEADER</li>
 
 
-
-<li><a href="{{url('/admin/change_password')}}"><i class="fa fa-lock"></i> <span>Change Password</span></a></li>
-
+        <li><a href="{{url('/admin/change_password')}}"><i class="fa fa-lock"></i> <span>Change Password</span></a></li>
         <li class="active"><a href="{{url('/admin/contact')}}"><i class="fa fa-users"></i> <span>Contact</span></a></li>
         <li class="active"><a href="{{url('/admin/admission')}}"><i class="fa fa-users"></i> <span>Appliation List</span></a></li>
         <li class="active"><a href="{{url('/admin/news')}}"><i class="fa fa-users"></i> <span>News</span></a></li>
         <li class="active"><a href="{{url('/admin/event')}}"><i class="fa fa-users"></i> <span>Event</span></a></li>
         <li class="active"><a href="{{url('/admin/gallery')}}"><i class="fa fa-users"></i> <span>Gallery</span></a></li>
          <li class="active"><a href="{{url('/admin/payment')}}"><i class="fa fa-inr"></i> <span>Payment</span></a></li>
-
-
-
-
-
-
-
+         <li class="active"><a href="{{route('admin.applicants')}}"><i class="fa fa-tasks"></i> <span>Applicants</span></a></li>
+         <li class="active"><a href="{{route('blog.index')}}"><i class="fa fa-edit"></i> <span>Blog</span></a></li>
 
     </section>
     <!-- /.sidebar -->

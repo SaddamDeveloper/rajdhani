@@ -34,7 +34,6 @@
                     <thead>
                         <tr>
                             <th>Service</th>
-                           
                             <th class="text-center">Price</th>
                             <th class="text-center">Total</th>
                         </tr>
@@ -71,20 +70,17 @@
                             <td class="text-center text-danger"><h4><strong>Rs. 500</strong></h4></td>
                         </tr>
                         <form method="post" action="{{url('/pay')}}">
-                                    
-              {{ csrf_field() }}
+                        {{ csrf_field() }}
+                        @if(isset($registration) && !empty($registration))
                         <tr>
                             <td>
-                                <input type="text" required placeholder="Please input your Name" value="" name="name" class="txt">
+                                <input type="hidden" value="{{$registration->name}}" name="name" class="txt">
                             </td>
                             <td>
-                                <input type="text" required placeholder="Please input your mobile No" value="" name="phone" class="txt">
+                                <input type="hidden" value="{{$registration->mobile}}" name="phone" class="txt">
                             </td>
                             <td>
-                                
-                                        
-                                        <input type="text" required placeholder="Please input your Email" value="" name="email" class="txt">
-                              
+                                <input type="hidden" value="{{$registration->email}}" name="email" class="txt">
                             </td>
                         </tr>
                         <tr>
@@ -92,6 +88,7 @@
                             <td></td>
                             <td> <input class="btn btn-primary pull-right" type="submit" value="Pay" style="background-color: #008000b0;    color: #fff;"></td>
                         </tr>
+                        @endif
                     </tbody>
                 </table>
                             

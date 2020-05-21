@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\News;
 use App\Event;
 use App\Gallery;
-
+use App\Blog;
 class PagesController extends Controller
 {
     public function index()
@@ -75,4 +75,15 @@ class PagesController extends Controller
       $galleries=Gallery::orderby('id','DESC')->get();
      return view('frontend.contents.gallery', compact('galleries'));
     }
+
+    public function blogs(){
+      $blogs = Blog::limit(6)->where('status', 1)->get();
+      return view("frontend.blog.blogs", compact('blogs'));
+    }
+
+    public function getBlogs($slug, $id){
+      $single_blog = Blog::where('id', $id)->first();
+      $latestBlog = Blog::latest()->limit(10)->get();
+      return view('frontend.blog.blog_detail', compact('single_blog', 'latestBlog'));
+    } 
 }

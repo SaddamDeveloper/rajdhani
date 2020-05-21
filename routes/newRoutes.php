@@ -22,13 +22,13 @@ Route::get('/student-register', function () {
 //     return view('frontend.student.admission1to10');
 // })->name('frontend.student_admission_1_to_10');
 
-Route::get('/student-admission-11-12', function () {
-    return view('frontend.student.admission11to12');
-})->name('frontend.student_admission_11_to_12');
+// Route::get('/student-admission-11-12', function () {
+//     return view('frontend.student.admission11to12');
+// })->name('frontend.student_admission_11_to_12');
 
-Route::get('/blogs', function () {
-    return view('frontend.blog.blogs');
-})->name('frontend.blogs');
+// Route::get('/blogs', function () {
+//     return view('frontend.blog.blogs');
+// })->name('frontend.blogs');
 
 Route::get('/blogs-detail', function () {
     return view('frontend.blog.blog-detail');

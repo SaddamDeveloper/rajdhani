@@ -13,7 +13,7 @@
             <h3 class="title-default-left title-bar-high">Student Login</h3>
                 <div class="form-group">
                     <label for="mobile">Mobile Number</label>
-                    <input type="number" class="form-control" id="mobile" name="mobile"  placeholder="Enter phone">
+                    <input type="number" class="form-control" id="mobile" name="mobile" value="{{ old('mobile') }}" placeholder="Enter phone">
                     @if($errors->has('mobile'))
                     <span class="invalid-feedback" role="alert" style="color:red">
                         <strong>{{ $errors->first('mobile') }}</strong>
@@ -26,6 +26,20 @@
                     @if($errors->has('password'))
                     <span class="invalid-feedback" role="alert" style="color:red">
                         <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label for="session">Select Session</label>
+                    <select name="session" id="session" class="form-control">
+                        <option value="" selected disabled>--SELECT SESSION--</option>
+                        <option value="2018" {{old('session') == '2018'?'selected':''}}>2018</option>
+                        <option value="2019" {{old('session') == '2019'?'selected':''}}>2019</option>
+                        <option value="2020" {{old('session') == '2020'?'selected':''}}>2020</option>
+                    </select>
+                    @if($errors->has('session'))
+                    <span class="invalid-feedback" role="alert" style="color:red">
+                        <strong>{{ $errors->first('session') }}</strong>
                     </span>
                     @endif
                 </div>

@@ -91,16 +91,19 @@
             </div>
         </div>
     </div>
-         <button type="button" class="btn btn-success btn-lg btn-block" onclick='printDiv();'>
-                    Print   <span class="glyphicon glyphicon-chevron-right"></span>
-                </button><a href="img/scan0002.pdf" target="_blank"><button type="button" class="btn btn-primary btn-lg btn-block">
-                    Download Application Form (Class: I-X)<span class="glyphicon glyphicon-chevron-right"></span>
-                </button></a>
-                <a href="img/scan0001.pdf" target="_blank">
-                     <button type="button" class="btn btn-primary btn-lg btn-block">
-                    Download Application Form  (Class: XI-XII)<span class="glyphicon glyphicon-chevron-right"></span>
-                </button>
-                </a>
+        <button type="button" class="btn btn-success btn-lg btn-block" onclick='printDiv();'>
+                Print   <span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+        <a href="img/scan0002.pdf" target="_blank">
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+                Download Application Form (Class: I-X)<span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+        </a>
+        <a href="img/scan0001.pdf" target="_blank">
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+                Download Application Form  (Class: XI-XII)<span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+        </a>
  <a href="">Print</a>
  <script type="text/javascript">
      function printDiv() 
