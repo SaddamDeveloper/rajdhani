@@ -34,7 +34,6 @@
                     <thead>
                         <tr>
                             <th>Service</th>
-                           
                             <th class="text-center">Price</th>
                             <th class="text-center">Total</th>
                         </tr>

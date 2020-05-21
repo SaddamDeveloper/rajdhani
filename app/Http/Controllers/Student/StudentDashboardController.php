@@ -13,12 +13,17 @@ use App\UploadedDocument;
 use Intervention\Image\Facades\Image;
 use Carbon\Carbon;
 use DB;
+use App\MarksObtained;
+use App\Payment;
 class StudentDashboardController extends Controller
 {
     public function index()
     {
         $registration = Registration::where('user_id', Auth::guard('student')->user()->id)->first();
-        return view('frontend.student.studentdashboard', compact('registration'));
+        $student = Student::where('id', Auth::guard('student')->user()->id)->first();
+        $payment = Payment::where('buyer_email', $student->email)->first();
+
+        return view('frontend.student.studentdashboard', compact('registration', 'payment'));
     }
 
     public function showAdmissionForm()
@@ -28,10 +33,12 @@ class StudentDashboardController extends Controller
     }
 
     public function store(Request $request){
+        
         $this->validate($request, [
             'session'           => 'required',
             'registration_no'   => 'required',
             'name'              => 'required',
+            'class'              => 'required',
             'dob'               => 'required',
             'place'             => 'required',
             'fn'                => 'required',
@@ -61,7 +68,7 @@ class StudentDashboardController extends Controller
             'ds1'               => 'required',
             'placed2'           => 'required',
             'dated2'            => 'required',
-            'ds2'               => 'required',
+            'ds2'               => 'required'
         ]);
             $registration = new Registration;
             $registration->user_id              = Auth::guard('student')->user()->id;
@@ -105,6 +112,19 @@ class StudentDashboardController extends Controller
             $registration->place2               = $request->input('placed2');
             $registration->date2                = $request->input('dated2');
             $registration->signature2           = $request->input('ds2');
+            
+            $subject = $request->input('subject');
+            $max_mark = $request->input('max_mark');
+            $marks_obtained = $request->input('marks_obtained');
+
+            $ins_marks_obtained = new MarksObtained;
+            $ins_marks_obtained->user_id = Auth::guard('student')->user()->id;
+            $ins_marks_obtained->subjects = $subject;
+            $ins_marks_obtained->max_marks = $max_mark;
+            $ins_marks_obtained->marks_obtained = $marks_obtained;
+
+            $ins_marks_obtained->save();
+
             $opt_subjects = $request->input('opt_subject');
             if(!empty($opt_subjects)){
                 foreach ($opt_subjects as $opt_subject) {
@@ -153,7 +173,7 @@ class StudentDashboardController extends Controller
             $insReg = $registration->save();
             
             if($insReg){
-                return view('frontend.student.payment');
+                return redirect('/dashboard');
             }
     }
 

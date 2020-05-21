@@ -29,6 +29,11 @@ Route::group(['middleware'=>'auth:student','prefix'=>'student','namespace'=>'Stu
     Route::post('/student/form/submit', 'StudentDashboardController@store')->name('student.form.store');
     Route::get('/payment', 'StudentDashboardController@showPaymentForm')->name('frontend.payment');
 });
+
+// Blog Post Frontend
+Route::get('/blogs', 'PagesController@blogs')->name('frontend.blogs');
+Route::get('/blog/{slug}/{id}', 'PagesController@getBlogs')->name('frontend.singleblog');
+
 Route::get('/','PagesController@index');
 // Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
@@ -76,8 +81,12 @@ Route::resource('event', 'EventController');
 Route::resource('gallery', 'GalleryController');
 Route::resource('admission', 'AdmissionController');
 Route::get('payment', 'PaymentController@payment');
-// Route::resource('hire', 'HireController');
+Route::resource('blog', 'BlogController');
+Route::get('/status/blog/{id}/{status}','BlogController@statusBlog')->name('admin.blog_status');
+Route::post('/blog/update', 'BlogController@blogUpdate')->name('blog.blog_update');
 // Route::resource('price', 'PriceController');
+Route::get('/applicants', 'ApplicationController@applicants')->name('admin.applicants');
+Route::get('/applicant/show/{id}', 'ApplicationController@show')->name('applicant.show');
 Route::get('/change_password', 'Auth\ChangePasswordController@index');
 Route::post('/change_password', 'Auth\ChangePasswordController@changepassword');
 Route::get('/logout', 'Auth\LoginController@logout');

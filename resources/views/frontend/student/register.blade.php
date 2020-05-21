@@ -21,6 +21,15 @@
                     @endif
                 </div>
                 <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" placeholder="Enter Email">
+                    @if($errors->has('email'))
+                    <span class="invalid-feedback" role="alert" style="color:red">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                    @endif
+                </div>
+                <div class="form-group">
                     <label for="class">Select Class</label>
                     <select name="class" id="class" class="form-control">
                         <option value="" selected disabled>--SELECT YOUR CLASS--</option>

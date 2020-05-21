@@ -56,7 +56,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="name">Name of the Candidate in full</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$student->name}}" placeholder="Enter name">
+                                <input type="text" class="form-control" name="name" value="{{$student->name}}" placeholder="Enter name">
                                 @if($errors->has('name'))
                                 <span class="invalid-feedback" role="alert" style="color:red">
                                     <strong>{{ $errors->first('name') }}</strong>
@@ -86,7 +86,30 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <label for="class">Select Class</label>
+                            <select name="class" id="class" class="form-control">
+                                <option value="" selected disabled>--SELECT YOUR CLASS--</option>
+                                <option value="I" {{$student->class == 'I'?'selected':''}}>I</option>
+                                <option value="II" {{$student->class == 'II'?'selected':''}}>II</option>
+                                <option value="III" {{$student->class == 'III'?'selected':''}}>III</option>
+                                <option value="IV" {{$student->class == 'IV'?'selected':''}}>IV</option>
+                                <option value="V" {{$student->class == 'V'?'selected':''}}>V</option>
+                                <option value="VI" {{$student->class == 'VI'?'selected':''}}>VI</option>
+                                <option value="VII" {{$student->class == 'VII'?'selected':''}}>VII</option>
+                                <option value="VIII" {{$student->class == 'VIII'?'selected':''}}>VIII</option>
+                                <option value="IX" {{$student->class == 'IX'?'selected':''}}>IX</option>
+                                <option value="X" {{$student->class == 'X'?'selected':''}}>X</option>
+                                <option value="XI" {{$student->class == 'XI'?'selected':''}}>XI</option>
+                                <option value="XII" {{$student->class == 'XII'?'selected':''}}>XII</option>
+                            </select>
+                            @if($errors->has('class'))
+                            <span class="invalid-feedback" role="alert" style="color:red">
+                                <strong>{{ $errors->first('class') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="fn">Father's Name</label>
                                 <input type="text" class="form-control" id="fn" name="fn" value="{{ old('fn') }}" placeholder="Enter father's name">
@@ -97,7 +120,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="mn">Mother's Name</label>
                                 <input type="text" class="form-control" id="mn" name="mn" value="{{ old('mn') }}" placeholder="Enter mother's name">
@@ -218,7 +241,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="email">e-mail</label>
-                                        <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" placeholder="Enter e-mail">
+                                        <input type="text" class="form-control" id="email" name="email" value="{{ $student->email }}" placeholder="Enter e-mail">
                                         @if($errors->has('email'))
                                         <span class="invalid-feedback" role="alert" style="color:red">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -398,41 +421,44 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td><input type="text" name="subject01" value="{{old('subject01')}}" class="form-control" /></td>
-                                    <td><input type="text" name="max_mark_01" value="{{old('max_mark_01')}}" class="form-control" /></td>
-                                    <td><input type="text" name="marks_obtained_01" value="{{old('marks_obtained_01')}}" class="form-control" /></td>
+                                    <td><textarea name="subject" class="form-control">{{old('subject')}}</textarea></td>
+                                    <td><input type="text" name="max_mark" value="{{old('max_mark')}}" class="form-control" /></td>
+                                    <td><input type="text" name="marks_obtained" value="{{old('marks_obtained')}}" class="form-control" /></td>
                                 </tr>
+                            </tbody>
+                            {{--
                                 <tr>
                                     <td>2</td>
-                                    <td><input type="text" name="subject02" value="{{old('subject02')}}" class="form-control" /></td>
-                                    <td><input type="text" name="max_mark_02" value="{{old('max_mark_02')}}" class="form-control" /></td>
-                                    <td><input type="text" name="marks_obtained_02" value="{{old('marks_obtained_02')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
                                 </tr>
+                                
                                 <tr>
                                     <td>3</td>
-                                    <td><input type="text" name="subject03" value="{{old('subject03')}}" class="form-control" /></td>
-                                    <td><input type="text" name="max_mark_03" value="{{old('max_mark_03')}}" class="form-control" /></td>
-                                    <td><input type="text" name="marks_obtained_03" value="{{old('marks_obtained_03')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td><input type="text" name="subject04" value="{{old('subject04')}}" class="form-control" /></td>
-                                    <td><input type="text" name="max_mark_04" value="{{old('max_mark_04')}}" class="form-control" /></td>
-                                    <td><input type="text" name="marks_obtained_04" value="{{old('marks_obtained_04')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td><input type="text" name="subject05" value="{{old('subject05')}}" class="form-control" /></td>
-                                    <td><input type="text" name="max_mark_05" value="{{old('max_mark_05')}}" class="form-control" /></td>
-                                    <td><input type="text" name="marks_obtained_05" value="{{old('marks_obtained_05')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
-                                    <td><input type="text" name="subject06" value="{{old('subject06')}}" class="form-control" /></td>
-                                    <td><input type="text" name="max_mark_06" value="{{old('max_mark_06')}}" class="form-control" /></td>
-                                    <td><input type="text" name="marks_obtained_06" value="{{old('marks_obtained_06')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
+                                    <td><input type="text" name="row[]" value="{{old('row')}}" class="form-control" /></td>
                                 </tr>
-                            </tbody>
+                            </tbody>  --}}
                         </table>
                     </div>
                     <div class="row">

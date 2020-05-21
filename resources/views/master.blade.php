@@ -9,6 +9,7 @@
        <title>Rajdhani Public School | Design by Web Infotech</title>
        <meta name="description" content="">
        <meta name="viewport" content="width=device-width, initial-scale=1">
+       @yield('og')
        <!-- Favicon -->
        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
        <!-- Normalize CSS -->
