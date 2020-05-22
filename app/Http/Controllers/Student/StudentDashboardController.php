@@ -173,7 +173,7 @@ class StudentDashboardController extends Controller
             $insReg = $registration->save();
             
             if($insReg){
-                return redirect('/dashboard');
+                return redirect()->route('student.dashboard');
             }
     }
 

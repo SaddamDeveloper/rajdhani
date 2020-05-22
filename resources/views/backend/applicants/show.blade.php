@@ -111,6 +111,40 @@
                     <th>Date</th>
                     <td>{{$single_applicant->date1}}</td>
                 </tr>
+                <tr>
+                    <th>Language</th>
+                    <td>
+                        @foreach ($single_applicant->languages as $ln)
+                            <input type="checkbox" value="{{$ln->id}}" checked disabled>
+                            <label for="{{$ln->language}}">{{$ln->language}}</label><br>
+                        @endforeach
+                    </td>
+                    <th>Marks</th>
+                    <td>
+                        @foreach ($single_applicant->marksObtained as $mo)
+                            {{$mo->subjects}}
+                            {{$mo->max_marks}}    
+                            {{$mo->marks_obtained}}    
+                        @endforeach
+                    </td>
+                </tr>
+                <tr>
+                    <th>Optional Subjects</th>
+                    <td>
+                        @foreach($single_applicant->optionalSubjects as $os)
+                            <input type="checkbox" value="{{$os->id}}" checked disabled>
+                            <label for="{{$os->subject_name}}">{{$os->subject_name}}</label><br>
+                        @endforeach
+                    </td>
+                </tr>
+                <tr>
+                    <th>Uploaded Document</th>
+                    <td>
+                        @foreach($single_applicant->uploadedDocuments as $ud)
+                            {{$ud->document_name}} =><img src="{{asset('Allphotos/photos/'.$ud->document)}}" alt="no-image" width="100px">
+                        @endforeach
+                    </td>
+                </tr>
             </table>
          </div>
 
