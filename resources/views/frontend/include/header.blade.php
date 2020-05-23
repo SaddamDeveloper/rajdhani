@@ -121,6 +121,22 @@
                                  <nav id="dropdown">
 
                                    <ul>
+                                    @if(Auth::guard('student')->check())
+                                        <li>
+                                            <a href="{{route('student.dashboard')}}" class="pull-right">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="pull-right">{{Auth::guard('student')->user()->name}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('student.logout') }}" class="fa fa-sign-out pull-right" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                                Logout
+                                            </a>     
+                                            <form id="frm-logout" action="{{ route('student.logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </li>
+                                   @else
                                        <li><a href="{{url('/')}}">Home</a></li>
                                        <li><a href="#">About Us</a>
                                            <ul>
@@ -191,6 +207,7 @@
                                                <li><a href="contact2.html">Contact 2</a></li>
                                            </ul> -->
                                        </li>
+                                       @endif
                                    </ul>
                                </nav>
                            </div>
