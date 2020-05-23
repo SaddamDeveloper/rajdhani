@@ -109,7 +109,7 @@
                             </span>
                             @endif
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 mobile-mt-2">
                             <div class="form-group">
                                 <label for="fn">Father's Name</label>
                                 <input type="text" class="form-control" id="fn" name="fn" value="{{ old('fn') }}" placeholder="Enter father's name">
@@ -134,7 +134,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="mt">Mother Tongue</label>
-                                <input type="text" class="form-control" id="mt" name="mt" value="{{ old('mt') }}" placeholder="Enter mother tounge">
+                                <input type="text" class="form-control" id="mt" name="mt" value="{{ old('mt') }}" placeholder="Enter mother tongue">
                                 @if($errors->has('mt'))
                                 <span class="invalid-feedback" role="alert" style="color:red">
                                     <strong>{{ $errors->first('mt') }}</strong>
@@ -375,7 +375,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="month-year">Month & Year if Passing</label>
+                                <label for="month-year">Month & Year of Passing</label>
                                 <input type="text" class="form-control" id="month-year" name="month-year" value="{{old('month-year')}}" placeholder="Enter passing year">
                                 @if($errors->has('month-year'))
                                 <span class="invalid-feedback" role="alert" style="color:red">
@@ -722,7 +722,7 @@
                         </div>
                         <div class="col-md-12">
                             <hr>
-                        <p>1. I agree to the admission of my son/daughter ward in to the class <u>{{$student->class=='XI' || $student->class == 'XII' ? '11' : '10' }}</u> and i shall be reposnible for his/her conduct and good behaviour during the period of his/her academic career here.</p>
+                        <p>1. I agree to the admission of my son/daughter ward in to the class <u>{{$student->class=='XI' || $student->class == 'XII' ? '11' : '10' }}</u> and i shall be reponsible for his/her conduct and good behaviour during the period of his/her academic career here.</p>
                             <p>2. I agree to prescribed fees without assigning reason.</p>
                             </div>
                             <div class="col-md-4">
