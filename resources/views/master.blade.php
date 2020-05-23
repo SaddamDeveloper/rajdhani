@@ -70,7 +70,7 @@
   </body>
   <script src="{{asset('js/jquery-2.2.4.min.js')}}" type="text/javascript"></script>
   <!-- Plugins js -->
-  <script src="{{asset('js/plugins.js"')}} type="text/javascript"></script>
+  <script src="{{asset('js/plugins.js')}}" type="text/javascript"></script>
   <!-- Bootstrap js -->
   <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
   <!-- WOW JS -->

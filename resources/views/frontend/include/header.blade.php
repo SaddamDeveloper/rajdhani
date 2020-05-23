@@ -178,6 +178,7 @@
                                                </li>
                                            </ul> -->
                                        </li>
+                                       <li><a href="{{url('/blogs')}}">Blog</a>
                                        <li><a href="{{url('/gallery')}}">Gallery</a>
                                            <!-- <ul>
                                                <li><a href="gallery1.html">Gallery 1</a></li>

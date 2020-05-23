@@ -139,7 +139,7 @@
     /*-------------------------------------
      jQuery MeanMenu activation code
      --------------------------------------*/
-    $('nav#dropdown').meanmenu({ siteLogo: "<a href='/' class='logo-mobile-menu'><img src='img/logo.png' /></a>" });
+    $('nav#dropdown').meanmenu({ siteLogo: "<a href='/' class='logo-mobile-menu mobile-bg-logo'><img src='http://rajdhanipublicschool.in/img/logo.png' /></a>" });
 
     /*-------------------------------------
      Wow js Active
