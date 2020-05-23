@@ -27,4 +27,16 @@ class ApplicationController extends Controller
         $single_applicant = Registration::where('id', $id)->first();
         return view('backend.applicants.show', compact('single_applicant'));
     }
+
+    public function edit($aId)
+    {
+        try {
+            $id = decrypt($aId);
+        }catch(DecryptException $e) {
+            return redirect()->back();
+        }
+
+        $single_applicant = Registration::where('id', $id)->first();
+        return view('backend.applicants.update', compact('single_applicant'));
+    }
 }

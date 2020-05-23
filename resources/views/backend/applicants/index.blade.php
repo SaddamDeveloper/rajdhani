@@ -61,7 +61,7 @@
                      </td>
                      <td> 
                           <a href='{{route('applicant.show', ['id' => encrypt($value->id)])}}' class='btn btn-info' target="_blank">View</a>
-                          {{-- <a href='{{route('applicant.edit', ['applicant' => encrypt($applicant->id)])}}' class='btn btn-warning' target="_blank">Edit</a>  --}}
+                          <a href='{{route('applicant.edit', ['id' => encrypt($value->id)])}}' class='btn btn-warning' target="_blank">Edit</a> 
                     </td>
              </tr>
              @endforeach

@@ -87,6 +87,7 @@ Route::post('/blog/update', 'BlogController@blogUpdate')->name('blog.blog_update
 // Route::resource('price', 'PriceController');
 Route::get('/applicants', 'ApplicationController@applicants')->name('admin.applicants');
 Route::get('/applicant/show/{id}', 'ApplicationController@show')->name('applicant.show');
+Route::get('/applicant/edit/{id}', 'ApplicationController@edit')->name('applicant.edit');
 Route::get('/change_password', 'Auth\ChangePasswordController@index');
 Route::post('/change_password', 'Auth\ChangePasswordController@changepassword');
 Route::get('/logout', 'Auth\LoginController@logout');
