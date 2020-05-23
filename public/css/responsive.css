@@ -47,6 +47,17 @@
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
+@media (max-width: 767px) {
+  .header-top-left {
+    display: block;
+  }
+  .header2-area .header-top-area .header-top-right ul li {
+    display: table-cell;
+  }
+  .header2-area .header-top-area {
+    width: 100%;
+  }
+}
 
 @media (min-width: 320px) and (max-width: 480px) {
   
@@ -166,7 +177,7 @@
     display: none !important;
   }
   .mean-bar {
-    top: 74px;
+    top: 73px;
   }
   .mean-container .mean-bar .meanmenu-reveal {
     padding-right: 20px;
@@ -186,6 +197,9 @@
   .mobile-mt-2 {
     margin-top: 10px;
   }
+  .header-top-left {
+    display: block;
+  }
 
 }
 
@@ -198,7 +212,7 @@
     font-size: 10px;
   }
   .mean-bar {
-    top: 23px;
+    top: 18px;
   }
   .mean-container .mean-bar .meanmenu-reveal {
     padding-top: 90px;

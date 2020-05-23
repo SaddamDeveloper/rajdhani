@@ -207,6 +207,12 @@
                                                <li><a href="contact2.html">Contact 2</a></li>
                                            </ul> -->
                                        </li>
+                                       @if(!Auth::guard('student')->check())
+                                       <li>
+                                       <a class="login-btn-area" href="{{route('student.login')}}"><i class="fa fa-download"></i>Admission Here</a>
+                                           <!-- </div> -->
+                                       </li>
+                                       @endif
                                        @endif
                                    </ul>
                                </nav>

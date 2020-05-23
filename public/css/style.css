@@ -10557,7 +10557,9 @@ ul.course-feature2 li:before {
     -moz-transition: all .5s ease-out;
     -ms-transition: all .5s ease-out;
     -o-transition: all .5s ease-out;
-    transition: all .5s ease-out
+    transition: all .5s ease-out;
+    width: 100%;
+    height: 80px;
 }
 
 .sidebar-latest-research-area ul li .latest-research-img a:hover img {
@@ -11842,6 +11844,8 @@ header {
 .hue img {
     filter: hue-rotate(0deg);
     transition: all 0.4s ease;
+    width: 100%;
+    height: 250px;
 }
 .hue img:hover {
     filter: hue-rotate(90deg);
