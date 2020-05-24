@@ -9,14 +9,12 @@
    @stop
 
 @section('content')
-      
 
 <div class="col-md-12">
     <div class="panel panel-primary">
 
      <div class="panel-heading">
              <span class="glyphicon glyphicon-list"></span>Applicants Lists
-
          </div>
 
          <div class="panel-body table-responsive">
@@ -61,7 +59,7 @@
                      </td>
                      <td> 
                           <a href='{{route('applicant.show', ['id' => encrypt($value->id)])}}' class='btn btn-info' target="_blank">View</a>
-                          <a href='{{route('applicant.edit', ['id' => encrypt($value->id)])}}' class='btn btn-warning' target="_blank">Edit</a> 
+                          {{-- <a href='{{route('applicant.edit', ['id' => encrypt($value->id)])}}' class='btn btn-warning' target="_blank">Edit</a>  --}}
                     </td>
              </tr>
              @endforeach

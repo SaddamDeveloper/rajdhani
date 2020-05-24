@@ -9,14 +9,14 @@
    @stop
 
 @section('content')
-      
-
+    
 <div class="col-md-12">
+    <a href="{{ route('applicant.pdf', ['id' => $single_applicant->id])}}" class="btn btn-warning pull-right mb-2">Export PDF</a>
+    <a href="javascript:window.print()" class="btn btn-success pull-right mb-2">Print</a>
     <div class="panel panel-primary">
      <div class="panel-heading">
              <span class="glyphicon glyphicon-list"></span>{{$single_applicant->name}}
          </div>
-         <a href="{{ route('applicant.pdf', ['id' => $single_applicant->id])}}">Export PDF</a>
          <div class="panel-body table-responsive">
             <table class="table table-striped table-bordered table-responsive" cellspacing="0">
                 <tr>

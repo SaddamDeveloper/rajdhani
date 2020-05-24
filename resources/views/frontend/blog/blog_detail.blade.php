@@ -28,10 +28,11 @@
                         </div>
                         <h2 class="title-default-left-bold-lowhight">{{$single_blog->title}}</h2>
                         <p>{{$single_blog->description}}</p>
+                        {{-- {{}} --}}
                         <ul class="news-social">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                            {!! Share::currentPage(null, [], '<li>', '</li>')->facebook() !!}
+                            {!! Share::currentPage(null, [], '<li>', '</li>')->twitter() !!}
+                            {!! Share::currentPage(null, [], '<li>', '</li>')->whatsapp() !!}
                         </ul>
                     </div>
                 </div>
