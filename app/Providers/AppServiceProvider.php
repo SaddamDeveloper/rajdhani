@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
          Schema::defaultStringLength(191);
 
           view()->composer('*', function ($view) {
- 
+            // dd(\Request::route());
             $current_route_name = \Request::route()->uri;
           
 

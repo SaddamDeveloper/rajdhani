@@ -89,6 +89,7 @@ Route::get('/applicants', 'ApplicationController@applicants')->name('admin.appli
 Route::get('/applicant/show/{id}', 'ApplicationController@show')->name('applicant.show');
 Route::get('/applicant/edit/{id}', 'ApplicationController@edit')->name('applicant.edit');
 Route::get('/applicant/pdf/{id}','ApplicationController@exportPdf')->name('applicant.pdf');
+
 Route::get('/change_password', 'Auth\ChangePasswordController@index');
 Route::post('/change_password', 'Auth\ChangePasswordController@changepassword');
 Route::get('/logout', 'Auth\LoginController@logout');
